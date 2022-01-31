@@ -1,0 +1,113 @@
+@font-face {
+  font-family: Kumbh Sans;
+  font-style: normal;
+  font-weight: normal;
+  src: url(../fonts/kumbh-sans-v6-latin/kumbh-sans-v6-latin-regular.ttf);
+}
+
+@font-face {
+  font-family: Kumbh Sans;
+  font-style: normal;
+  font-weight: bold;
+  src: url(../fonts/kumbh-sans-v6-latin/kumbh-sans-v6-latin-700.ttf);
+}
+
+@font-face {
+  font-family: "Kumbh Sans";
+  font-style: normal;
+  font-weight: bolder;
+  src: url(../fonts/kumbh-sans-v6-latin/kumbh-sans-v6-latin-900.ttf);
+}
+
+$backgroundColor: linear-gradient(180deg, #b068e9 0%, #6463e7 100%);
+$white: #ffffff;
+$boxShadowFaq: 0px 50px 50px -20px rgba(53, 18, 122, 0.497159);
+$gray: #787887;
+
+html {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.container {
+  background: $backgroundColor;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faq__section {
+  margin: 148px 24px 448px;
+  width: 327px;
+  height: 535px;
+  border-radius: 23px;
+  background-color: $white;
+  padding: 100px 30px 50px;
+  box-shadow: $boxShadowFaq;
+
+  @media (min-width: 1024px) {
+    width: 920px;
+    height: 509px;
+    display: flex;
+  }
+
+  &__h1 {
+    text-align: center;
+  }
+
+  &__images {
+    position: absolute;
+    top: -26px;
+    left: 0;
+
+    &__main {
+      position: absolute;
+      width: 236.85px;
+      height: 139.37px;
+      left: 69.07px;
+      top: 77.59px;
+    }
+
+    &__shadow {
+      position: relative;
+      top: -92px;
+      left: 30px;
+    }
+  }
+
+  &__qa {
+    &__question {
+      font-size: 13px;
+      font-weight: normal;
+      display: inline-block;
+      padding: 19px 25px 18px;
+
+      &:active {
+        font-weight: bold;
+      }
+    }
+
+    &__arrow-container {
+      margin-right: 24px;
+      float: right;
+    }
+
+    &__answer {
+      font-size: 12px;
+      display: none;
+      color: $gray;
+
+      &:active {
+        display: block;
+      }
+    }
+  }
+
+  &__box {
+    display: none;
+
+    @media (min-width: 1024px) {
+      display: inline-block;
+    }
+  }
+}
