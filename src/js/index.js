@@ -10,8 +10,11 @@ elements.forEach((element) => {
     answers.forEach((ans) => {
       let ansIcon = ans.parentElement.querySelector("button i");
       if (answer !== ans) {
-        ans.classList.add("inactive");
+        ans.parentElement.classList.remove("clicked");
         ansIcon.className = "fas fa-chevron-down";
+      }
+      if (answer === ans) {
+        ans.parentElement.classList.add("clicked");
       }
     });
 
