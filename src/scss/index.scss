@@ -82,17 +82,21 @@ html {
 
   &__qa {
     &__question {
+      display: flex;
+
       & h3 {
         font-size: 13px;
         font-weight: normal;
         display: inline-block;
         padding: 19px 25px 18px;
         margin: 0;
+        flex: 11;
       }
 
       &__button {
         border: none;
         background: none;
+        flex: 1;
 
         & i {
           color: orange;
