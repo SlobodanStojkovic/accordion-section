@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./dist/css/index.css" />
     <title>FAQ Accordion Section</title>
   </head>
@@ -49,87 +55,71 @@
 
         <div class="faq__section__qa">
           <div class="faq__section__qa__question">
-            How many team members can I invite?
+            <h3>
+              How many team members can I invite?
+              <button class="faq__section__qa__question__button">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </h3>
           </div>
-          <div class="faq__section__qa__arrow-container">
-            <img
-              class="faq__section__qa__arrow-container__item"
-              src="./src/img/arrow-down.png"
-              alt=""
-            />
+          <div class="faq__section__qa__answer inactive">
+            <h4>You can invite up to 10 team members.</h4>
           </div>
-          <h4 class="faq__section__qa__answer">
-            You can invite up to 10 team members.
-          </h4>
         </div>
 
         <div class="faq__section__qa">
           <div class="faq__section__qa__question">
-            What is the maximum file upload size?
+            <h3>What is the maximum file upload size?</h3>
+            <button class="faq__section__qa__question__button">
+              <i class="fas fa-chevron-down"></i>
+            </button>
           </div>
-          <div class="faq__section__qa__arrow-container">
-            <img
-              class="faq__section__qa__arrow-container__item"
-              src="./src/img/arrow-down.png"
-              alt=""
-            />
+          <div class="faq__section__qa__answer inactive">
+            <h4>
+              No more than 2GB. All files in your account must fit your allotted
+              storage space.
+            </h4>
           </div>
-          <h4 class="faq__section__qa__answer">
-            No more than 2GB. All files in your account must fit your allotted
-            storage space.
-          </h4>
         </div>
 
         <div class="faq__section__qa">
           <div class="faq__section__qa__question">
-            How do I reset my password?
+            <h3>How do I reset my password?</h3>
+            <button class="faq__section__qa__question__button">
+              <i class="fas fa-chevron-down"></i>
+            </button>
           </div>
-          <div class="faq__section__qa__arrow-container">
-            <img
-              class="faq__section__qa__arrow-container__item"
-              src="./src/img/arrow-down.png"
-              alt=""
-            />
+          <div class="faq__section__qa__answer inactive">
+            <h4>By clicking the reset password in your profile settings.</h4>
           </div>
-          <h4 class="faq__section__qa__answer">
-            By clicking the reset password in your profile settings.
-          </h4>
         </div>
 
         <div class="faq__section__qa">
           <div class="faq__section__qa__question">
-            Can I cancel my subscription?
+            <h3>Can I cancel my subscription?</h3>
+            <button class="faq__section__qa__question__button">
+              <i class="fas fa-chevron-down"></i>
+            </button>
           </div>
-          <div class="faq__section__qa__arrow-container">
-            <img
-              class="faq__section__qa__arrow-container__item"
-              src="./src/img/arrow-down.png"
-              alt=""
-            />
+          <div class="faq__section__qa__answer inactive">
+            <h4>You can cancel subscription at any time.</h4>
           </div>
-          <h4 class="faq__section__qa__answer">
-            You can cancel subscription at any time.
-          </h4>
         </div>
 
         <div class="faq__section__qa">
           <div class="faq__section__qa__question">
-            Do you provide additional support?
+            <h3>Do you provide additional support?</h3>
+            <button class="faq__section__qa__question__button">
+              <i class="fas fa-chevron-down"></i>
+            </button>
           </div>
-          <div class="faq__section__qa__arrow-container">
-            <img
-              class="faq__section__qa__arrow-container__item"
-              src="./src/img/arrow-down.png"
-              alt=""
-            />
+          <div class="faq__section__qa__answer inactive">
+            <h4>Yes, we provide additional sdownport.</h4>
           </div>
-          <h4 class="faq__section__qa__answer">
-            Yes, we provide additional support.
-          </h4>
         </div>
       </div>
     </div>
 
-    <script src="./dist/js/index.js"></script>
+    <script src="./dist/js/index.js" defer></script>
   </body>
 </html>

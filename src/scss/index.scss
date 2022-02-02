@@ -36,6 +36,14 @@ html {
   justify-content: center;
 }
 
+.inactive {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
 .faq__section {
   margin: 148px 24px 448px;
   width: 327px;
@@ -49,6 +57,7 @@ html {
     width: 920px;
     height: 509px;
     display: flex;
+    flex-direction: column;
   }
 
   &__h1 {
@@ -77,25 +86,28 @@ html {
 
   &__qa {
     &__question {
-      font-size: 13px;
-      font-weight: normal;
-      display: inline-block;
-      padding: 19px 25px 18px;
-
-      &:active {
-        font-weight: bold;
+      & h3 {
+        font-size: 13px;
+        font-weight: normal;
+        display: inline-block;
+        padding: 19px 25px 18px;
+        margin: 0;
       }
-    }
 
-    &__arrow-container {
-      margin-right: 24px;
-      float: right;
+      &__button {
+        border: none;
+        background: none;
+
+        &:active {
+          font-weight: bold;
+        }
+      }
     }
 
     &__answer {
       font-size: 12px;
-      display: none;
       color: $gray;
+      padding: 0px 25px 0px;
 
       &:active {
         display: block;
