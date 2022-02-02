@@ -40,10 +40,6 @@ html {
   display: none;
 }
 
-.active {
-  display: block;
-}
-
 .faq__section {
   margin: 148px 24px 448px;
   width: 327px;
@@ -97,6 +93,10 @@ html {
       &__button {
         border: none;
         background: none;
+
+        & i {
+          color: orange;
+        }
 
         &:active {
           font-weight: bold;
