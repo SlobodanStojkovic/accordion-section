@@ -15,104 +15,106 @@
   </head>
   <body>
     <div class="container">
-      <div class="faq__section__images">
-        <picture class="faq__section__images__main">
-          <source
-            media="(max-width: 1023px )"
-            srcset="./src/img/presentation.svg"
-          />
-          <source
-            media="(min-width: 1024px )"
-            srcset="./src/img/presentation-desktop.svg"
-          />
-          <img src="./src/img/presentation-desktop.svg" alt="presentation" />
-        </picture>
-        <picture class="faq__section__images__shadow">
-          <source
-            media="(max-width: 1023px )"
-            srcset="./src/img/shadow-mobile.svg"
-          />
-          <source
-            media="(min-width: 1024px )"
-            srcset="./src/img/shadow-mobile.svg"
-          />
-          <img
-            class="faq__section__images__shadow__img"
-            src="./src/img/presentation-desktop.svg"
-            alt="presentation shadow"
-          />
-        </picture>
-
-        <img
-          class="faq__section__box"
-          src="./src/img/box-desktop.svg"
-          alt="box"
-        />
-      </div>
-
       <div class="faq__section">
-        <h1 class="faq__section__h1">FAQ</h1>
+        <div class="faq__section__images">
+          <picture class="faq__section__images__main">
+            <source
+              media="(max-width: 1023px )"
+              srcset="./src/img/presentation.svg"
+            />
+            <source
+              media="(min-width: 1024px )"
+              srcset="./src/img/presentation-desktop.svg"
+            />
+            <img src="./src/img/presentation-desktop.svg" alt="presentation" />
+          </picture>
+          <picture class="faq__section__images__shadow">
+            <source
+              media="(max-width: 1023px )"
+              srcset="./src/img/shadow-mobile.svg"
+            />
+            <source
+              media="(min-width: 1024px )"
+              srcset="./src/img/shadow-mobile.svg"
+            />
+            <img
+              class="faq__section__images__shadow__img"
+              src="./src/img/presentation-desktop.svg"
+              alt="presentation shadow"
+            />
+          </picture>
 
-        <div class="faq__section__qa">
-          <div class="faq__section__qa__question">
-            <h3>How many team members can I invite?</h3>
-            <button class="faq__section__qa__question__button">
-              <i class="fas fa-chevron-down"></i>
-            </button>
-          </div>
-          <div class="faq__section__qa__answer inactive">
-            <h4>You can invite up to 10 team members.</h4>
-          </div>
+          <img
+            class="faq__section__box"
+            src="./src/img/box-desktop.svg"
+            alt="box"
+          />
         </div>
 
-        <div class="faq__section__qa">
-          <div class="faq__section__qa__question">
-            <h3>What is the maximum file upload size?</h3>
-            <button class="faq__section__qa__question__button">
-              <i class="fas fa-chevron-down"></i>
-            </button>
-          </div>
-          <div class="faq__section__qa__answer inactive">
-            <h4>
-              No more than 2GB. All files in your account must fit your allotted
-              storage space.
-            </h4>
-          </div>
-        </div>
+        <div class="faq__section__text">
+          <h1 class="faq__section__h1">FAQ</h1>
 
-        <div class="faq__section__qa">
-          <div class="faq__section__qa__question">
-            <h3>How do I reset my password?</h3>
-            <button class="faq__section__qa__question__button">
-              <i class="fas fa-chevron-down"></i>
-            </button>
+          <div class="faq__section__qa">
+            <div class="faq__section__qa__question">
+              <h3>How many team members can I invite?</h3>
+              <button class="faq__section__qa__question__button">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="faq__section__qa__answer inactive">
+              <h4>You can invite up to 10 team members.</h4>
+            </div>
           </div>
-          <div class="faq__section__qa__answer inactive">
-            <h4>By clicking the reset password in your profile settings.</h4>
-          </div>
-        </div>
 
-        <div class="faq__section__qa">
-          <div class="faq__section__qa__question">
-            <h3>Can I cancel my subscription?</h3>
-            <button class="faq__section__qa__question__button">
-              <i class="fas fa-chevron-down"></i>
-            </button>
+          <div class="faq__section__qa">
+            <div class="faq__section__qa__question">
+              <h3>What is the maximum file upload size?</h3>
+              <button class="faq__section__qa__question__button">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="faq__section__qa__answer inactive">
+              <h4>
+                No more than 2GB. All files in your account must fit your
+                allotted storage space.
+              </h4>
+            </div>
           </div>
-          <div class="faq__section__qa__answer inactive">
-            <h4>You can cancel subscription at any time.</h4>
-          </div>
-        </div>
 
-        <div class="faq__section__qa">
-          <div class="faq__section__qa__question">
-            <h3>Do you provide additional support?</h3>
-            <button class="faq__section__qa__question__button">
-              <i class="fas fa-chevron-down"></i>
-            </button>
+          <div class="faq__section__qa">
+            <div class="faq__section__qa__question">
+              <h3>How do I reset my password?</h3>
+              <button class="faq__section__qa__question__button">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="faq__section__qa__answer inactive">
+              <h4>By clicking the reset password in your profile settings.</h4>
+            </div>
           </div>
-          <div class="faq__section__qa__answer inactive">
-            <h4>Yes, we provide additional support.</h4>
+
+          <div class="faq__section__qa">
+            <div class="faq__section__qa__question">
+              <h3>Can I cancel my subscription?</h3>
+              <button class="faq__section__qa__question__button">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="faq__section__qa__answer inactive">
+              <h4>You can cancel subscription at any time.</h4>
+            </div>
+          </div>
+
+          <div class="faq__section__qa">
+            <div class="faq__section__qa__question">
+              <h3>Do you provide additional support?</h3>
+              <button class="faq__section__qa__question__button">
+                <i class="fas fa-chevron-down"></i>
+              </button>
+            </div>
+            <div class="faq__section__qa__answer inactive">
+              <h4>Yes, we provide additional support.</h4>
+            </div>
           </div>
         </div>
       </div>

@@ -32,6 +32,7 @@ html {
   background: $backgroundColor;
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -46,8 +47,10 @@ html {
   height: 535px;
   border-radius: 23px;
   background-color: $white;
-  padding: 100px 30px 50px;
+  padding: 0px 30px 50px;
   box-shadow: $boxShadowFaq;
+  display: flex;
+  flex-direction: column;
 
   @media (min-width: 1024px) {
     width: 920px;
@@ -61,23 +64,24 @@ html {
   }
 
   &__images {
-    position: absolute;
-    top: -26px;
-    left: 0;
+    height: 20%;
 
     &__main {
       position: absolute;
-      width: 236.85px;
-      height: 139.37px;
-      left: 69.07px;
-      top: 77.59px;
+      top: 48px;
+      width: 240px;
+      height: 140px;
     }
 
     &__shadow {
       position: relative;
-      top: -92px;
-      left: 30px;
+      top: 0;
+      left: 31px;
     }
+  }
+
+  &__text {
+    height: 80%;
   }
 
   &__qa {
