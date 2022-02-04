@@ -77,7 +77,7 @@ $kumbhSansBold: "Kumbh Sans bold";
 $kumbhSansBolder: "Kumbh Sans bolder";
 
 html {
-  font-family: "Kumbh Sans", sans-serif;
+  font-family: $kumbhSans;
 }
 
 .inactive {
