@@ -1,3 +1,80 @@
+/* Reset styles */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+picture,
+div,
+img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* End of reset styles */
+
 /* kumbh-sans-regular - latin */
 @font-face {
   font-family: "Kumbh Sans";
@@ -80,21 +157,11 @@ html {
   font-family: $kumbhSans;
 }
 
-.inactive {
-  /* display: none; */
-  opacity: 0;
-  height: 16px;
-  pointer-events: none;
-}
-
-.hide {
-  display: none;
-  font-weight: normal;
-}
-
-.container {
+.accordion-section {
   background: $backgroundColor;
+  min-height: 100vh;
   width: 100%;
+  padding: 130px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,10 +172,23 @@ html {
   font-family: $kumbhSansBolder;
 }
 
+.faq__title {
+  text-align: center;
+  font-family: $kumbhSansBolder;
+  padding-top: 28px;
+
+  @media (min-width: 1024px) {
+    font-family: $kumbhSansBold;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: left;
+  }
+}
+
 .faq__section {
-  margin: 148px 24px 448px;
-  width: 327px;
-  height: 535px;
+  width: 100%;
+  min-width: 355px;
+  max-width: 768px;
   border-radius: 23px;
   background-color: $white;
   padding: 0px 30px 50px;
@@ -117,58 +197,53 @@ html {
   flex-direction: column;
 
   @media (min-width: 1024px) {
-    width: 920px;
-    height: 509px;
     display: flex;
     flex-direction: row;
-    padding: 0;
+    padding: 65px 110px 70px 0;
     justify-content: space-between;
-  }
-
-  &__h1 {
-    text-align: center;
-    font-family: $kumbhSansBolder;
-
-    @media (min-width: 1024px) {
-      text-align: left;
-    }
+    max-width: 920px;
+    max-height: 510px;
+    gap: 88px;
   }
 
   &__images {
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: 1024px) {
+      position: relative;
+    }
+
     &__main {
       position: absolute;
-      top: 48px;
-      width: 240px;
-      height: 140px;
-      padding-left: 20px;
+      transform: translateX(-5%);
+      top: 61px;
 
       @media (min-width: 1024px) {
-        position: relative;
-        top: 16%;
-        padding-left: 0;
+        top: 0;
+        left: 0;
+        transform: unset;
       }
     }
 
     &__shadow {
       position: relative;
-      top: 0;
-      left: 31px;
-      padding-left: 20px;
 
       @media (min-width: 1024px) {
         padding-left: 0;
         position: relative;
-        top: -71.5%;
-        left: 0;
+        top: -65px;
       }
-    }
 
-    @media (min-width: 1024px) {
-      width: 40%;
+      &__img {
+        @media (min-width: 1024px) {
+          max-width: unset;
+        }
+      }
     }
   }
 
-  &__text {
+  &__wrapper {
     @media (min-width: 1024px) {
       width: 40%;
       padding: 65px 60px 0 0;
@@ -180,21 +255,20 @@ html {
 
     &__question {
       display: flex;
+      width: 100%;
+      font-size: 13px;
+      font-weight: inherit;
+      display: inline-block;
+      padding: 19px 25px 13px 0px;
+      margin: 0;
+      flex: 11;
+      color: $darkgray;
+      line-height: 16px;
+      position: relative;
 
-      & h3 {
-        font-size: 13px;
-        font-weight: normal;
-        display: inline-block;
-        padding: 19px 25px 13px 0px;
-        margin: 0;
-        flex: 11;
-        color: $darkgray;
-        line-height: 16px;
-
-        &:hover {
-          color: $orange;
-          cursor: url(../img/pointer-hand.svg) 4 4, pointer;
-        }
+      &:hover {
+        color: $orange;
+        cursor: url(../img/pointer-hand.svg) 4 4, pointer;
       }
 
       &__button {
@@ -202,15 +276,20 @@ html {
         background: none;
         flex: 1;
 
-        & i {
-          color: orange;
+        &::after {
+          content: "";
+          border: solid $orange;
+          border-width: 0 2px 2px 0;
+          display: inline-block;
+          padding: 3px;
+          position: absolute;
+          top: 50%;
+          right: 15px;
         }
       }
 
       @media (min-width: 1024px) {
-        h3 {
-          padding-left: 0;
-        }
+        padding-left: 0;
       }
     }
 
@@ -219,18 +298,14 @@ html {
       color: $gray;
       padding: 0px 25px 0px;
       font-family: $kumbhSans;
-      transition: 0.5s ease-in;
+      transition: 0.3s ease-in-out;
       padding-left: 0px;
-
-      @media (min-width: 1024px) {
-        margin: 0;
-        padding: 0;
-      }
-
-      h4 {
-        margin: 0;
-        padding: 0 0 16px 0;
-      }
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      max-height: 0;
+      height: auto;
+      margin-bottom: 16px;
     }
   }
 
@@ -240,9 +315,34 @@ html {
     @media (min-width: 1024px) {
       width: 45%;
       display: block;
-      position: relative;
-      bottom: 728px;
-      left: -81px;
+      position: absolute;
+      bottom: 54px;
+      left: -92px;
     }
   }
+}
+
+.arrow::after {
+  content: "";
+  border: solid $orange;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+.down::after {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.up::after {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.active {
+  font-weight: 900;
 }
