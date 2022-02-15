@@ -97,6 +97,7 @@ select {
       url("../fonts/kumbh-sans-v6-latin/kumbh-sans-v6-latin-regular.svg#KumbhSans")
       format("svg"); /* Legacy iOS */
 }
+
 /* kumbh-sans-700 - latin */
 @font-face {
   font-family: "Kumbh Sans bold";
@@ -119,6 +120,7 @@ select {
       url("../fonts/kumbh-sans-v6-latin/kumbh-sans-v6-latin-700.svg#KumbhSans")
       format("svg"); /* Legacy iOS */
 }
+
 /* kumbh-sans-900 - latin */
 @font-face {
   font-family: "Kumbh Sans bolder";
@@ -159,17 +161,13 @@ html {
 
 .accordion-section {
   background: $backgroundColor;
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
   padding: 130px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.clicked {
-  font-family: $kumbhSansBolder;
 }
 
 .faq__title {
@@ -182,6 +180,8 @@ html {
     font-size: 32px;
     line-height: 40px;
     text-align: left;
+    padding-top: 0px;
+    padding-bottom: 45px;
   }
 }
 
@@ -201,124 +201,102 @@ html {
     flex-direction: row;
     padding: 65px 110px 70px 0;
     justify-content: space-between;
-    max-width: 920px;
-    max-height: 510px;
+    max-width: 1024px;
+    min-height: 510px;
     gap: 88px;
   }
+}
 
-  &__images {
-    display: flex;
-    justify-content: center;
+.images {
+  display: flex;
+  justify-content: center;
 
-    @media (min-width: 1024px) {
-      position: relative;
-    }
+  @media (min-width: 1024px) {
+    position: relative;
+  }
+}
 
-    &__main {
-      position: absolute;
-      transform: translateX(-5%);
-      top: 61px;
+.images__main {
+  position: absolute;
+  transform: translateX(-5%);
+  top: 61px;
 
-      @media (min-width: 1024px) {
-        top: 0;
-        left: 0;
-        transform: unset;
-      }
-    }
+  @media (min-width: 1024px) {
+    top: 0;
+    left: 0;
+    transform: unset;
+    position: relative;
+    width: 472px;
+  }
+}
 
-    &__shadow {
-      position: relative;
+.images__shadow {
+  position: relative;
 
-      @media (min-width: 1024px) {
-        padding-left: 0;
-        position: relative;
-        top: -65px;
-      }
-
-      &__img {
-        @media (min-width: 1024px) {
-          max-width: unset;
-        }
-      }
-    }
+  @media (min-width: 1024px) {
+    padding-left: 0;
+    position: absolute;
+    top: -65px;
+    left: 0;
   }
 
-  &__wrapper {
+  &__img {
     @media (min-width: 1024px) {
-      width: 40%;
-      padding: 65px 60px 0 0;
+      max-width: unset;
     }
   }
+}
 
-  &__qa {
-    border-bottom: 0.5px solid $graywhite;
+.faq__section__questions-and-answers {
+  border-bottom: 0.5px solid $graywhite;
+}
 
-    &__question {
-      display: flex;
-      width: 100%;
-      font-size: 13px;
-      font-weight: inherit;
-      display: inline-block;
-      padding: 19px 25px 13px 0px;
-      margin: 0;
-      flex: 11;
-      color: $darkgray;
-      line-height: 16px;
-      position: relative;
+.faq__section__question {
+  display: flex;
+  width: 100%;
+  font-size: 14px;
+  font-weight: inherit;
+  display: inline-block;
+  padding: 20px 25px 15px 0px;
+  margin: 0;
+  flex: 11;
+  color: $darkgray;
+  line-height: 16px;
+  position: relative;
 
-      &:hover {
-        color: $orange;
-        cursor: url(../img/pointer-hand.svg) 4 4, pointer;
-      }
-
-      &__button {
-        border: none;
-        background: none;
-        flex: 1;
-
-        &::after {
-          content: "";
-          border: solid $orange;
-          border-width: 0 2px 2px 0;
-          display: inline-block;
-          padding: 3px;
-          position: absolute;
-          top: 50%;
-          right: 15px;
-        }
-      }
-
-      @media (min-width: 1024px) {
-        padding-left: 0;
-      }
-    }
-
-    &__answer {
-      font-size: 12px;
-      color: $gray;
-      padding: 0px 25px 0px;
-      font-family: $kumbhSans;
-      transition: 0.3s ease-in-out;
-      padding-left: 0px;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      max-height: 0;
-      height: auto;
-      margin-bottom: 16px;
-    }
+  &:hover {
+    color: $orange;
+    cursor: url(../img/pointer-hand.svg) 4 4, pointer;
   }
 
-  &__box {
-    display: none;
+  @media (min-width: 1024px) {
+    padding-left: 0;
+  }
+}
 
-    @media (min-width: 1024px) {
-      width: 45%;
-      display: block;
-      position: absolute;
-      bottom: 54px;
-      left: -92px;
-    }
+.faq__section__answer {
+  font-size: 12px;
+  color: $gray;
+  padding: 0px 25px 0px;
+  font-family: $kumbhSans;
+  transition: 0.3s ease-in-out;
+  padding-left: 0px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  max-height: 0;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+.images__box-img {
+  display: none;
+
+  @media (min-width: 1024px) {
+    display: block;
+    position: absolute;
+    top: 140px;
+    left: -92px;
   }
 }
 

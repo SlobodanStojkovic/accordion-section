@@ -1,4 +1,4 @@
-const faqQuestion = document.querySelectorAll(".faq__section__qa__question");
+const faqQuestion = document.querySelectorAll(".faq__section__question");
 
 faqQuestion.forEach((question) => {
   question.addEventListener("click", () => {
@@ -24,7 +24,7 @@ faqQuestion.forEach((question) => {
       item.lastElementChild.style.maxHeight = null;
     });
 
-    let arrows = document.querySelectorAll(".faq__section__qa__question");
+    let arrows = document.querySelectorAll(".faq__section__question");
 
     arrows.forEach((item) => {
       if (item.parentElement.classList.contains("active")) {
